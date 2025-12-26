@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Cumpleaños</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="fondo-rosa">
+
+  <div class="container">
+    <h1>🎉 ¡Feliz Cumpleaños! 🎂</h1>
+
+    <!-- 🎂 PASTEL GIRANDO -->
+    <img src="img/pastel.png" alt="Pastel" class="pastel-girando">
+
+    <button id="btnCarta">PRECIONAME</button>
+  </div>
+
+  <!-- Modal -->
+  <div id="modalCarta" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>💌 De mí para ti 💌</h2>
+      <p>
+        Te deseo un día lleno de alegría, risas y mucho amor ✨  
+        Que este nuevo capítulo esté lleno de momentos inolvidables 🎈
+      </p>
+      <button class="boton-modal" onclick="location.href='carta.html'">Ábreme 🎁</button>
+    </div>
+  </div>
+
+  <script>
+    // === JavaScript integrado para que abra el modal ===
+    const btnCarta = document.getElementById("btnCarta");
+    const modal = document.getElementById("modalCarta");
+    const closeModal = document.querySelector(".close");
+
+    btnCarta.onclick = () => modal.style.display = "block";
+    closeModal.onclick = () => modal.style.display = "none";
+
+    window.onclick = (e) => {
+      if (e.target == modal) modal.style.display = "none";
+    }
+  </script>
+
+</body>
+</html>

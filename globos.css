@@ -1,0 +1,105 @@
+/* AJUSTES GENERALES */
+body {
+  background-color: #ffc5de;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 20px;  /* 👉 evita que esté pegado a los bordes */
+}
+
+/* CONTENEDOR PRINCIPAL PARA CENTRAR TODO */
+.contenedor {
+  width: 90%;          /* 👉 se ajusta al tamaño de pantalla */
+  max-width: 500px;    /* 👉 limite para pantallas grandes */
+  text-align: center;
+  margin: auto;
+}
+
+/* BOTÓN */
+.boton {
+  display: inline-block;
+  background: #ff3b8d;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 20px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: 0.3s;
+}
+
+.boton:hover {
+  transform: scale(1.05);
+}
+
+/* CARTA */
+.carta {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+  animation: aparecer 1.4s ease;
+}
+
+.carta h1 {
+  font-size: 28px;
+  color: #ff3b8d;
+  margin-bottom: 15px;
+}
+
+.carta p {
+  font-size: 17px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.firma {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #ff3b8d;
+}
+
+/* ANIMACIÓN ENTRADA */
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🎈 GLOBOS */
+.balloons {
+  position: fixed;
+  bottom: -200px;
+  width: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.balloon {
+  width: 60px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  animation: float 3s infinite linear;
+}
+
+.red { background: #ff6b6b; left: 10%; animation-delay: 0s; }
+.blue { background: #4dabf7; left: 40%; animation-delay: 1s; }
+.green { background: #69db7c; left: 70%; animation-delay: 2s; }
+.yellow { background: #ffd43b; left: 85%; animation-delay: 3s; }
+
+@keyframes float {
+  0% { transform: translateY(100vh); }
+  100% { transform: translateY(-100vh); }
+}
